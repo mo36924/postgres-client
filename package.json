@@ -1,0 +1,62 @@
+{
+  "name": "@mo36924/postgres-client",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/mo36924/postgres-client#readme",
+  "bugs": {
+    "url": "https://github.com/mo36924/postgres-client/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mo36924/postgres-client.git"
+  },
+  "license": "MIT",
+  "author": "mo36924",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "run-s clean format build:*",
+    "build:rollup": "rollup -c --configPlugin typescript --environment NODE_ENV:production",
+    "clean": "del dist",
+    "format": "run-s format:*",
+    "format:sort-package-json": "sort-package-json",
+    "format:prettier": "prettier --write .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "trailingComma": "all"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^8.3.1",
+    "@types/pg": "^8.6.5",
+    "del-cli": "^4.0.1",
+    "npm-run-all": "^4.1.5",
+    "pg": "^8.7.3",
+    "prettier": "^2.6.0",
+    "rollup": "^2.70.1",
+    "rollup-plugin-dts": "^4.2.0",
+    "sort-package-json": "^1.55.0",
+    "typescript": "^4.6.2"
+  },
+  "peerDependencies": {
+    "pg": ">=8.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
